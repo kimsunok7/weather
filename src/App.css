@@ -1,10 +1,27 @@
-body{
+body {
   background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20201012/pngtree-white-cloud-on-blue-sky-weather-background-image_410050.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.container{height:100vh; display:flex; justify-content: center; align-items: center; flex-direction: column; text-align:center; ;}
-.box{background-color: rgba(255,255,255,0.5); border-radius: 10px; padding:20px;}
-.box h2{margin:20px 0px;}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.box {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+.box h2 {
+  margin: 20px 0px;
+}
+
+Button {
+  margin: 10px;
+}

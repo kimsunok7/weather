@@ -11,21 +11,15 @@ function App() {
   const [city, setCity] = useState(null);
   const cities = ["sydney", "paris", "new york", "seoul"];
   const [loading, setLoading] = useState(false);
-  const [apiError, setAPIError] = useState("");
 
   const getWeatherByCurrentLocation = async (lat, lon) => {
-    try {
-      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=2adc9641cf0514e2cf35500bb77f249f`;
-      setLoading(true);
-      let response = await fetch(url);
-      let data = await response.json();
-      console.log("data", data);
-      setWeather(data);
-      setLoading(false);
-    } catch (err) {
-      setAPIError(err.message);
-      setLoading(false);
-    }
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=2adc9641cf0514e2cf35500bb77f249f`;
+    setLoading(true);
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log("data", data);
+    setWeather(data);
+    setLoading(false);
   };
 
   const getCurrentLocation = () => {
@@ -40,16 +34,10 @@ function App() {
   };
 
   const getWeatherByCity = async () => {
-    try {
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2adc9641cf0514e2cf35500bb77f249f`;
-      let response = await fetch(url);
-      let data = await response.json();
-      setWeather(data);
-      setLoading(false);
-    } catch (err) {
-      setAPIError(err.message);
-      setLoading(false);
-    }
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2adc9641cf0514e2cf35500bb77f249f`;
+    let response = await fetch(url);
+    let data = await response.json();
+    setWeather(data);
   };
 
   useEffect(() => {
